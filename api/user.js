@@ -1,4 +1,5 @@
 import request from '@/utils/request'
+import * as authRequest from '@/plugins/request'
 
 export function login(data){
     return request({
@@ -16,7 +17,7 @@ export function register(data){
     })
 }
 export function updateUser(data){
-    return request({
+    return authRequest.request({
         method: 'PUT',
         url: '/api/user',
         data: data

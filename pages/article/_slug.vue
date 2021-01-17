@@ -6,7 +6,7 @@
 
       <h1>{{ article.title }}</h1>
 
-      <ArticleMeta :article="article" />
+      <ArticleMeta :article="article" :user="user" />
     </div>
   </div>
 
@@ -19,21 +19,16 @@
     <hr />
 
     <div class="article-actions">
-      <ArticleMeta :article="article" />
+      <ArticleMeta :article="article" :user="user" />
     </div>
 
     <div class="row">
 
       <div class="col-xs-12 col-md-8 offset-md-2">
-        <ArticleComments :article="article" />
-        
-        
+        <ArticleComments :article="article" :user="user" />
       </div>
-
     </div>
-
   </div>
-
 </div>
 </template>
 
@@ -42,6 +37,7 @@ import { getArticle } from '@/api/article'
 import MarkdownIt from 'markdown-it'
 import ArticleMeta from './components/article-meta'
 import ArticleComments from './components/article-comments'
+import { mapState } from 'vuex'
 export default {
   components: { ArticleMeta, ArticleComments },
   name: 'ArticleDetail',
@@ -54,6 +50,9 @@ export default {
     return {
       article
     }
+  },
+  computed:{
+    ...mapState(['user'])
   },
   head(){
     return {

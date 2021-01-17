@@ -13,6 +13,7 @@ const _6575f134 = () => interopDefault(import('../pages/article/create.vue' /* w
 const _0124a66c = () => interopDefault(import('../pages/article/components/article-comments.vue' /* webpackChunkName: "pages/article/components/article-comments" */))
 const _3e3d435b = () => interopDefault(import('../pages/article/components/article-meta.vue' /* webpackChunkName: "pages/article/components/article-meta" */))
 const _2a4b25e0 = () => interopDefault(import('../pages/article/_slug.vue' /* webpackChunkName: "pages/article/_slug" */))
+const _39515859 = () => interopDefault(import('../pages/editor/_slug.vue' /* webpackChunkName: "pages/editor/_slug" */))
 const _0d7b96ae = () => interopDefault(import('../pages/profile/_username.vue' /* webpackChunkName: "pages/profile/_username" */))
 const _873d219e = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
@@ -68,6 +69,10 @@ export const routerOptions = {
     path: "/article/:slug",
     component: _2a4b25e0,
     name: "article-slug"
+  }, {
+    path: "/editor/:slug?",
+    component: _39515859,
+    name: "editor-slug"
   }, {
     path: "/profile/:username?",
     component: _0d7b96ae,

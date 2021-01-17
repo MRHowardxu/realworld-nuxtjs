@@ -43,6 +43,30 @@ export const getComments = slug => {
         url: `/api/articles/${slug}/comments`
     })
 }
+
+export const addArticle = data => {
+    return request({
+        method: 'POST',
+        url: '/api/articles',
+        data
+    })
+}
+
+export const updateArticle = (slug, data) => {
+    return request({
+        method: 'PUT',
+        url: `/api/articles/${slug}`,
+        data
+    })
+}
+
+export const addComments = (slug, data) => {
+    return request({
+        method: 'POST',
+        url: `/api/articles/${slug}/comments`,
+        data
+    })
+}
 export const getTags = params => {
     return request({
         method: 'GET',

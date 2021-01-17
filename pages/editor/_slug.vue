@@ -31,31 +31,39 @@
 </template>
 
 <script>
-import { addArticle, updateArticle } from '@/api/article'
+import { getArticle, updateArticle } from '@/api/article'
+import MarkdownIt from 'markdown-it'
+
 export default {
   middleware: 'authenticated',
   name: 'articleCreate',
   data(){
     return {
       article: {
-        'title': '平凡之路',
-        'body':`我曾经跨过山和大海
-也穿过人山人海
-我曾经拥有着的一切
-转眼都飘散如烟
-我曾经失落失望失掉所有方向
-直到看见平凡才是唯一的答案`,
-        'description': '你要去哪 Via Via',
-        'tagList': ['歌词'],
-        'tagText': '歌词'
+        'title': '',
+        'body': '',
+        'description': '',
+        'tagList': [],
+        'tagText': ''
       }
+    }
+  },
+  async asyncData({ params }){
+    const { data } = await getArticle(params.slug)
+    console.log('%c⧭', 'color: #d90000', data)
+    const md = new MarkdownIt()
+    const { article } = data
+    article.tagText = article.tagList.join(' ')
+    // article.body = md.render(article.body)
+    return {
+      article
     }
   },
   methods: {
     async onPublish(){
-      console.log('%c⧭', 'color: #807160', 'onPublish')
       try {
-        const { data } = await addArticle(this.article)
+        this.article.tagList = this.article.tagText.split(' ')
+        const { data } = await updateArticle(this.article.slug, {article: this.article})
         console.log('%c⧭', 'color: #f200e2', data)
         this.$router.push(`/article/${data.article.slug}`)
       } catch (error) {

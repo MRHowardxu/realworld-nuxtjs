@@ -2,11 +2,11 @@
   <div>
       <form class="card comment-form">
           <div class="card-block">
-            <textarea class="form-control" placeholder="Write a comment" rows="3"></textarea>
+            <textarea v-model="body" class="form-control" placeholder="Write a comment" rows="3"></textarea>
           </div>
           <div class="card-footer">
-            <img src="http://i.imgur.com/Qr71crq.jpg" class="comment-author-img" />
-            <button class="btn btn-sm btn-primary">
+            <img :src="user.image" class="comment-author-img" />
+            <button class="btn btn-sm btn-primary" @click="onPostComment" :disabled="pending">
              Post Comment
             </button>
           </div>
@@ -30,13 +30,20 @@
               <img :src="comment.author.image" class="comment-author-img" />
               
             </nuxt-link>
+            <nuxt-link :to="{
+                name: 'profile',
+                params: {
+                    username: comment.author.username
+                }
+            }" class="comment-author">
+              {{ comment.author.username }}
+            </nuxt-link>
             &nbsp;
-            <a href="" class="comment-author">{{ comment.author.username }}</a>
             <span class="date-posted">{{ comment.createdAt | date('MMM DD, YYYY')}}</span>
           </div>
         </div>
 
-        <div class="card">
+        <!-- <div class="card">
           <div class="card-block">
             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
           </div>
@@ -52,32 +59,51 @@
               <i class="ion-trash-a"></i>
             </span>
           </div>
-        </div>
+        </div> -->
   </div>
 </template>
 
 <script>
-import { getComments } from '@/api/article'
+import { getComments, addComments } from '@/api/article'
 export default {
     name: 'ArticleComments',
     props: {
         article: {
             type: Object,
             required: true
+        },
+        user: {
+          type: Object
         }
     },
     data(){
         return {
-            comments: []
+            comments: [],
+            body: '',
+            pending: false
         }
     },
-    async mounted(){
+    methods: {
+      async onPostComment(){
+        this.pending = true
+        try {
+          const { data } = await addComments(this.article.slug, { comment: { body }})
+          console.log('%c⧭', 'color: #007300', data)
+          this.comments.push(data.comment)
+        } catch (error) {
+          
+        }
+        this.pending = false
+      },
+      async loadComments(){
         console.log('this.article: ', this.article)
         const { data } = await getComments(this.article.slug)
-        return {
-            comments: data.comments
-        }
-        console.log('%c⧭', 'color: #ffa640', data)
+        this.comments = data.comments
+
+      }
+    },
+    mounted(){
+      this.loadComments()
     }
 }
 </script>

@@ -9,19 +9,24 @@
             <nuxt-link class="nav-link" to="/" exact="">Home</nuxt-link>
           </li>
           
-          <li class="nav-item">
-            <nuxt-link class="nav-link" to="/article/create">
-              <i class="ion-compose"></i>&nbsp;New Post
-            </nuxt-link>
-          </li>
-          <li class="nav-item">
-            <nuxt-link class="nav-link" to="/settings">
-              <i class="ion-gear-a"></i>&nbsp;Settings
-            </nuxt-link>
-          </li>
           <template v-if="user">
             <li class="nav-item">
-              <nuxt-link class="nav-link" to="/profile/123">
+              <nuxt-link class="nav-link" to="/article/create">
+                <i class="ion-compose"></i>&nbsp;New Post
+              </nuxt-link>
+            </li>
+            <li class="nav-item">
+              <nuxt-link class="nav-link" to="/settings">
+                <i class="ion-gear-a"></i>&nbsp;Settings
+              </nuxt-link>
+            </li>
+            <li class="nav-item">
+              <nuxt-link class="nav-link" :to="{
+                name: 'profile-username',
+                params: {
+                  username: user.username
+                }
+              }">
                 <img class="user-pic" :src="user.image" />
                 {{ user.username }}
               </nuxt-link>
@@ -30,6 +35,9 @@
           <template v-else>
             <li class="nav-item">
               <nuxt-link class="nav-link" to="/login">Login</nuxt-link>
+            </li>
+            <li class="nav-item">
+              <nuxt-link class="nav-link" to="/signup">Sign Up</nuxt-link>
             </li>
           </template>
         </ul>

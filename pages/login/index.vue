@@ -27,7 +27,6 @@
           <button type="button" class="btn btn-lg btn-primary pull-xs-right" @click="submit">
             Login
           </button>
-          <button type="button" class="btn btn-lg btn-warning pull-xs-left" @click="resetPassword">Reset Password</button>
         </form>
       </div>
 
