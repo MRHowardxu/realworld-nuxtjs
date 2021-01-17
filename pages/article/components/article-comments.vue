@@ -11,7 +11,6 @@
             </button>
           </div>
         </form>
-        
         <div
             class="card"
             v-for="comment in comments"
