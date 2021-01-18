@@ -9,7 +9,6 @@ const request = axios.create({
 export default function plugin({ store }) {
     //  请求拦截器
     request.interceptors.request.use(function(config){
-        console.log('123');
         const { user } = store.state
         if(user && user.token){
             config.headers.Authorization = `Token ${user.token}`
