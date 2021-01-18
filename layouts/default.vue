@@ -50,9 +50,10 @@
         <span class="attribution">
           An interactive learning project from <a href="https://thinkster.io">Thinkster</a>. Code &amp; design licensed under MIT.
         </span>
-      </div>
-      <div>
-        Oona's Lover ©˙∆∆˙©
+        <a style="margin-left: 12px;">
+          <i class="ion-heart"></i>
+          Thanks Mylove Oona ©˙∆∆˙©
+        </a>
       </div>
     </footer>
     </div>
