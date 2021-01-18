@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "nuxt",
     "start": "nuxt start",
-    "build": "nuxt build"
+    "build": "nuxt build",
+    "pm2-start": "pm2 start pm2.config.json",
+    "pm2-reload": "pm2 reload pm2.config.json",
+    "pm2-stop": "pm2 stop all"
   },
   "keywords": [],
   "author": "",
