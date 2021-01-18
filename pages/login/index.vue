@@ -24,7 +24,7 @@
           <fieldset class="form-group">
             <input v-model="user.password" class="form-control form-control-lg" type="password" placeholder="Password">
           </fieldset>
-          <button type="button" class="btn btn-lg btn-primary pull-xs-right" @click="submit">
+          <button :disabled="pending" type="button" class="btn btn-lg btn-primary pull-xs-right" @click="submit">
             Login
           </button>
         </form>
@@ -44,6 +44,7 @@ export default {
     name: 'LoginIndex',
     data(){
       return {
+        pending: false,
         user: {
           email: '',
           password: ''
@@ -53,6 +54,7 @@ export default {
     },
     methods: {
       async submit(){
+        this.pending = true
         console.log('submit')
         try {
           const { data } = await login({ user: this.user })
@@ -70,10 +72,11 @@ export default {
           this.errors = err.response.data.errors
           
         }
+        this.pending = false
       },
       async resetPassword(){
         console.log('resetPassword')
-        const { data } = updateUser(this.user)
+        const { data } = await updateUser(this.user)
         if(data){
           this.$router.replace('/')
         }

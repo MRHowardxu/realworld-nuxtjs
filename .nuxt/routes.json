@@ -3,84 +3,72 @@
     "name": "article",
     "path": "/article",
     "component": "/Users/xugenghao/Project/前端训练营/realworld-nuxt/pages/article/index.vue",
-    "chunkName": "pages/article/index",
-    "_name": "_26dde350"
+    "chunkName": "pages/article/index"
   },
   {
     "name": "layout",
     "path": "/layout",
     "component": "/Users/xugenghao/Project/前端训练营/realworld-nuxt/pages/layout/index.vue",
-    "chunkName": "pages/layout/index",
-    "_name": "_25b38b1e"
+    "chunkName": "pages/layout/index"
   },
   {
     "name": "login",
     "path": "/login",
     "component": "/Users/xugenghao/Project/前端训练营/realworld-nuxt/pages/login/index.vue",
-    "chunkName": "pages/login/index",
-    "_name": "_4000c2cb"
+    "chunkName": "pages/login/index"
   },
   {
     "name": "settings",
     "path": "/settings",
     "component": "/Users/xugenghao/Project/前端训练营/realworld-nuxt/pages/settings/index.vue",
-    "chunkName": "pages/settings/index",
-    "_name": "_7f6d3697"
+    "chunkName": "pages/settings/index"
   },
   {
     "name": "signup",
     "path": "/signup",
     "component": "/Users/xugenghao/Project/前端训练营/realworld-nuxt/pages/signup/index.vue",
-    "chunkName": "pages/signup/index",
-    "_name": "_084420e8"
+    "chunkName": "pages/signup/index"
   },
   {
     "name": "article-create",
     "path": "/article/create",
     "component": "/Users/xugenghao/Project/前端训练营/realworld-nuxt/pages/article/create.vue",
-    "chunkName": "pages/article/create",
-    "_name": "_6575f134"
+    "chunkName": "pages/article/create"
   },
   {
     "name": "article-components-article-comments",
     "path": "/article/components/article-comments",
     "component": "/Users/xugenghao/Project/前端训练营/realworld-nuxt/pages/article/components/article-comments.vue",
-    "chunkName": "pages/article/components/article-comments",
-    "_name": "_0124a66c"
+    "chunkName": "pages/article/components/article-comments"
   },
   {
     "name": "article-components-article-meta",
     "path": "/article/components/article-meta",
     "component": "/Users/xugenghao/Project/前端训练营/realworld-nuxt/pages/article/components/article-meta.vue",
-    "chunkName": "pages/article/components/article-meta",
-    "_name": "_3e3d435b"
+    "chunkName": "pages/article/components/article-meta"
   },
   {
     "name": "article-slug",
     "path": "/article/:slug",
     "component": "/Users/xugenghao/Project/前端训练营/realworld-nuxt/pages/article/_slug.vue",
-    "chunkName": "pages/article/_slug",
-    "_name": "_2a4b25e0"
+    "chunkName": "pages/article/_slug"
   },
   {
     "name": "editor-slug",
     "path": "/editor/:slug?",
     "component": "/Users/xugenghao/Project/前端训练营/realworld-nuxt/pages/editor/_slug.vue",
-    "chunkName": "pages/editor/_slug",
-    "_name": "_39515859"
+    "chunkName": "pages/editor/_slug"
   },
   {
     "name": "profile-username",
     "path": "/profile/:username?",
     "component": "/Users/xugenghao/Project/前端训练营/realworld-nuxt/pages/profile/_username.vue",
-    "chunkName": "pages/profile/_username",
-    "_name": "_0d7b96ae"
+    "chunkName": "pages/profile/_username"
   },
   {
     "name": "index",
     "path": "/",
     "component": "/Users/xugenghao/Project/前端训练营/realworld-nuxt/pages/index.vue",
-    "chunkName": "pages/index",
-    "_name": "_873d219e"
+    "chunkName": "pages/index"
   }
 ]
