@@ -52,7 +52,7 @@
         </span>
         <a style="margin-left: 12px;color: #5cb85c;">
           
-          Thanks Mylove <i class="ion-heart"></i> Oona ©˙∆∆˙©
+          Thanks Mylove <i class="ion-heart" style="color: red"></i> Oona ©˙∆∆˙©
         </a>
       </div>
     </footer>
