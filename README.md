@@ -1,4 +1,4 @@
 # realworld-nuxtjs
 nuxtjs sample
 ## 项目访问地址
-http://www.13760273624.xyz:3000
+http://117.50.93.22:3000
